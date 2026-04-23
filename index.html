@@ -1,598 +1,580 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Isabella Bianchi — Nutricionista | Protocolo Reset 45 Dias</title>
-<meta name="description" content="Isabella Bianchi, nutricionista com +18 anos de experiência. Conheça o Protocolo Reset 45 Dias — um plano pensado para o seu corpo, sua rotina e resultados duradouros."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --forest:#1e4d35;
-  --forest-mid:#2d6b4a;
-  --sage:#4a8c64;
-  --mint:#7ab893;
-  --cream:#faf8f4;
-  --warm:#f5f1ea;
-  --paper:#fffcf7;
-  --amber:#c8873a;
-  --amber-light:#e0a55a;
-  --dark:#0f1f16;
-  --charcoal:#2a2a2a;
-  --body:#3d3d3d;
-  --muted:#7a7a7a;
-  --line:#e4ddd2;
-}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Outfit',sans-serif;
-  background:var(--paper);
-  color:var(--charcoal);
-  overflow-x:hidden;
-  line-height:1.6;
-}
-.display{font-family:'Playfair Display',serif;font-weight:800;line-height:1.05;letter-spacing:-.02em}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  padding:0 56px;height:72px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(255,252,247,.95);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s,box-shadow .3s;
-}
-nav.scrolled{border-color:var(--line);box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.nav-logo img{height:52px;width:auto;display:block}
-.nav-right{display:flex;align-items:center;gap:36px}
-.nav-link{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--body);text-decoration:none;transition:color .2s}
-.nav-link:hover{color:var(--forest)}
-.nav-btn{
-  background:var(--amber);color:#fff;
-  padding:11px 26px;border-radius:8px;
-  font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  text-decoration:none;transition:all .25s;
-  box-shadow:0 4px 16px rgba(200,135,58,.35);
-}
-.nav-btn:hover{background:#b57832;transform:translateY(-1px)}
-.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:4px}
-.hbg span{display:block;width:26px;height:2px;background:var(--dark);border-radius:2px;transition:all .3s}
-.hbg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hbg.open span:nth-child(2){opacity:0}
-.hbg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mob-overlay{
-  display:none;position:fixed;inset:0;z-index:190;
-  background:var(--paper);
-  flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:32px;
-}
-.mob-overlay.open{display:flex}
-.mob-overlay a{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--dark);text-decoration:none;transition:color .2s}
-.mob-overlay a:hover{color:var(--forest)}
-.mob-overlay .mob-cta-btn{
-  margin-top:16px;background:var(--amber);color:#fff;
-  padding:14px 36px;border-radius:8px;
-  font-family:'Outfit',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-}
-
-/* HERO */
-#hero{
-  min-height:100vh;
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:stretch;padding-top:72px;
-  background:var(--paper);
-}
-.hero-left{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:80px 60px 80px 80px;position:relative;
-}
-.hero-left::after{
-  content:'';position:absolute;right:0;top:8%;bottom:8%;
-  width:1px;background:linear-gradient(to bottom,transparent,var(--line) 25%,var(--line) 75%,transparent);
-}
-.hero-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
-.hero-kicker .hk-line{display:block;width:32px;height:1px;background:var(--amber)}
-.hero-kicker p{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
-.hero-name{font-size:clamp(3rem,5.5vw,5.8rem);color:var(--dark);margin-bottom:10px}
-.hero-name .line2{color:var(--forest);display:block}
-.hero-cred{font-size:.85rem;font-weight:400;color:var(--muted);letter-spacing:.04em;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--line)}
-.hero-tagline{font-size:clamp(1rem,1.4vw,1.18rem);color:var(--body);line-height:1.8;margin-bottom:44px;max-width:460px;font-weight:300}
-.hero-tagline strong{font-weight:600;color:var(--dark)}
-.hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:400px}
-
-.cta-main{
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  background:var(--forest);color:#fff;
-  padding:18px 28px;border-radius:10px;
-  font-size:.98rem;font-weight:700;letter-spacing:.02em;
-  text-decoration:none;transition:all .3s;
-  box-shadow:0 8px 32px rgba(30,77,53,.35);
-  position:relative;overflow:hidden;
-}
-.cta-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent)}
-.cta-main:hover{background:var(--forest-mid);transform:translateY(-2px);box-shadow:0 14px 40px rgba(30,77,53,.45)}
-.cta-main .tag-pill{background:var(--amber);color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;flex-shrink:0}
-
-.cta-sub{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  background:transparent;color:var(--body);
-  padding:14px 24px;border-radius:10px;
-  font-size:.86rem;font-weight:500;
-  text-decoration:none;border:1.5px solid var(--line);transition:all .25s;
-}
-.cta-sub:hover{border-color:var(--sage);color:var(--forest)}
-
-/* hero photo */
-.hero-right{position:relative;background:var(--warm);overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:saturate(1.05)}
-.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(30,77,53,.22) 0%,transparent 40%)}
-.hero-badges{position:absolute;bottom:36px;left:32px;z-index:2;display:flex;gap:10px}
-.hbadge{
-  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
-  border-radius:12px;padding:12px 16px;
-  box-shadow:0 8px 28px rgba(0,0,0,.12);
-}
-.hbadge .bn{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--forest);line-height:1;display:block}
-.hbadge .bl{font-size:.68rem;font-weight:500;color:var(--muted);margin-top:2px}
-.hbadge.gold .bn{color:var(--amber)}
-
-/* STRIP */
-.strip{
-  background:var(--forest);color:rgba(255,255,255,.65);
-  padding:16px 80px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-}
-.si{display:flex;align-items:center;gap:8px;font-size:.76rem;font-weight:500;letter-spacing:.04em}
-.si::before{content:'✦';color:var(--mint);font-size:.65rem}
-
-/* SECTIONS */
-.section{padding:96px 80px}
-.slabel{display:inline-block;font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
-.stitle{font-size:clamp(1.9rem,3vw,2.9rem);color:var(--dark);margin-bottom:14px}
-.srule{width:48px;height:2px;background:linear-gradient(90deg,var(--amber),transparent);margin:18px 0 32px}
-.sbody{font-size:1rem;color:var(--body);line-height:1.85;font-weight:300;max-width:600px}
-.sbody strong{font-weight:600;color:var(--dark)}
-
-/* RESET SECTION */
-#reset-section{background:var(--dark);position:relative;overflow:hidden;padding:120px 80px}
-#reset-section::before{
-  content:'45';
-  position:absolute;right:-2%;top:50%;transform:translateY(-50%);
-  font-family:'Playfair Display',serif;font-weight:800;
-  font-size:min(48vw,540px);color:rgba(255,255,255,.025);
-  line-height:1;pointer-events:none;
-}
-.ri{max-width:860px;position:relative;z-index:1}
-.rtag{
-  display:inline-flex;align-items:center;gap:10px;
-  border:1px solid rgba(200,135,58,.4);border-radius:50px;padding:8px 20px;margin-bottom:28px;
-}
-.rtag .rdot{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:blink 2s ease-in-out infinite}
-.rtag span{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-light)}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.rheadline{font-size:clamp(2.4rem,5.2vw,5.2rem);color:#fff;margin-bottom:18px}
-.rheadline em{color:var(--amber-light);font-style:italic}
-.rsubline{font-size:clamp(1rem,1.5vw,1.25rem);color:rgba(255,255,255,.6);font-weight:300;line-height:1.78;max-width:620px;margin-bottom:48px}
-.rsubline strong{color:rgba(255,255,255,.88);font-weight:500}
-.rbenefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px}
-.rb{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px 20px}
-.rb .rbicon{font-size:1.5rem;margin-bottom:10px;display:block}
-.rb h4{font-size:.92rem;font-weight:600;color:#fff;margin-bottom:6px}
-.rb p{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.6}
-.btn-reset{
-  display:inline-flex;align-items:center;gap:14px;
-  background:var(--amber);color:#fff;
-  padding:20px 44px;border-radius:10px;
-  font-size:1.02rem;font-weight:700;letter-spacing:.04em;
-  text-decoration:none;transition:all .3s;
-  box-shadow:0 12px 48px rgba(200,135,58,.5);
-  position:relative;overflow:hidden;
-}
-.btn-reset::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.12),transparent 60%)}
-.btn-reset:hover{background:#b37030;transform:translateY(-3px) scale(1.02);box-shadow:0 18px 56px rgba(200,135,58,.6)}
-.rfine{margin-top:18px;font-size:.75rem;color:rgba(255,255,255,.22);letter-spacing:.04em}
-
-/* SOBRE */
-#sobre{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
-.sobre-frame{border-radius:24px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,.12);position:relative}
-.sobre-frame img{width:100%;height:560px;object-fit:cover;object-position:top;display:block}
-.sobre-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(30,77,53,.28) 0%,transparent 50%)}
-.sobre-acc{
-  position:absolute;bottom:-20px;right:-20px;
-  background:var(--forest);border-radius:18px;padding:20px 24px;color:#fff;
-  box-shadow:0 14px 44px rgba(30,77,53,.4);
-}
-.sobre-acc .an{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:800;line-height:1;display:block}
-.sobre-acc .al{font-size:.7rem;font-weight:500;color:rgba(255,255,255,.6);margin-top:4px}
-.sbody-p{font-size:.98rem;color:var(--body);line-height:1.85;font-weight:300;margin-bottom:18px}
-.sbody-p strong{font-weight:600;color:var(--dark)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.chip{background:#fff;border:1px solid var(--line);border-radius:50px;padding:6px 14px;font-size:.76rem;font-weight:500;color:var(--body)}
-
-/* FORMAÇÃO */
-#formacao{background:var(--forest);padding:96px 80px}
-#formacao .slabel{color:var(--mint)}
-#formacao .stitle{color:#fff}
-#formacao .srule{background:linear-gradient(90deg,var(--mint),transparent)}
-.flist{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:16px;border-radius:16px;overflow:hidden}
-.fitem{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:32px 28px;transition:background .3s}
-.fitem:hover{background:rgba(255,255,255,.07)}
-.fnum{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:rgba(255,255,255,.07);line-height:1;margin-bottom:10px}
-.fitem h3{font-size:.98rem;font-weight:600;color:#fff;margin-bottom:6px}
-.fitem p{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.6}
-
-/* ESPECIALIDADES */
-#especialidades{background:var(--paper)}
-.egrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
-.ecard{border:1.5px solid var(--line);border-radius:18px;padding:28px 22px;background:#fff;transition:all .3s;position:relative;overflow:hidden}
-.ecard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--forest),var(--sage));transform:scaleX(0);transform-origin:left;transition:transform .35s}
-.ecard:hover{border-color:var(--sage);transform:translateY(-5px);box-shadow:0 16px 48px rgba(30,77,53,.1)}
-.ecard:hover::before{transform:scaleX(1)}
-.eicon{font-size:1.9rem;margin-bottom:14px;display:block}
-.ecard h3{font-size:.95rem;font-weight:700;color:var(--dark);margin-bottom:7px}
-.ecard p{font-size:.79rem;color:var(--muted);line-height:1.65}
-
-/* MÉTODO */
-#metodo{background:var(--warm);display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center}
-.mpoints{display:flex;flex-direction:column;gap:18px;margin-top:32px}
-.mp{display:flex;gap:14px;align-items:flex-start}
-.mpcheck{width:26px;height:26px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;flex-shrink:0;margin-top:2px}
-.mptext h4{font-size:.92rem;font-weight:600;color:var(--dark);margin-bottom:3px}
-.mptext p{font-size:.82rem;color:var(--muted);line-height:1.6}
-.mstats{background:linear-gradient(145deg,#fff 0%,var(--cream) 100%);border-radius:24px;padding:44px;border:1.5px solid var(--line);position:relative}
-.mstats::before{content:'Protocolo\AReSet 45';white-space:pre;position:absolute;top:24px;right:24px;font-family:'Playfair Display',serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);text-align:right;line-height:1.5}
-.mstat{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
-.mstat:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
-.mstat .mn{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:800;color:var(--forest);line-height:1}
-.mstat .ml{font-size:.8rem;color:var(--muted);margin-top:4px}
-
-/* PRESENCIAL */
-#presencial{background:var(--paper);padding:80px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-#presencial .slabel{color:var(--muted)}
-#presencial .stitle{font-size:clamp(1.5rem,2.3vw,2.1rem)}
-#presencial .sbody{max-width:420px;margin-bottom:24px}
-.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--dark);border:2px solid var(--line);padding:13px 24px;border-radius:9px;font-size:.87rem;font-weight:600;text-decoration:none;transition:all .25s}
-.btn-wa:hover{border-color:var(--forest);color:var(--forest)}
-.pinfo{background:var(--warm);border-radius:18px;padding:32px 28px;border:1.5px solid var(--line)}
-.pirow{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.87rem;color:var(--body)}
-.pirow:first-child{padding-top:0}
-.pirow:last-child{border-bottom:0;padding-bottom:0}
-.pirow .piicon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
-.pirow strong{color:var(--dark);font-weight:600;display:block;margin-bottom:1px}
-
-/* FOOTER */
-footer{background:var(--dark);color:rgba(255,255,255,.5);padding:60px 80px 40px}
-.ftop{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:60px;margin-bottom:48px}
-.fbrand img{height:46px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1) opacity(.65)}
-.fbrand p{font-size:.8rem;line-height:1.75;color:rgba(255,255,255,.3);max-width:250px}
-.fcol h5{font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:16px}
-.fcol a{display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:.83rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
-.fcol a:hover{color:var(--mint)}
-.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:26px;display:flex;align-items:center;justify-content:space-between;font-size:.74rem;color:rgba(255,255,255,.18)}
-
-/* FLOATING WA */
-.wafloat{
-  position:fixed;bottom:28px;right:28px;z-index:300;
-  width:58px;height:58px;border-radius:50%;
-  background:#25d366;display:flex;align-items:center;justify-content:center;
-  text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,.5);
-  transition:all .3s;animation:wap 3s ease-in-out infinite;
-}
-.wafloat:hover{transform:scale(1.12);animation:none;box-shadow:0 12px 40px rgba(37,211,102,.65)}
-.wafloat svg{width:28px;height:28px;fill:#fff}
-@keyframes wap{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.5)}50%{box-shadow:0 8px 48px rgba(37,211,102,.75)}}
-
-/* ANIMATIONS */
-.au{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.au.vis{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
-
-/* RESPONSIVE */
-@media(max-width:1100px){
-  nav{padding:0 24px}
-  .nav-right .nav-link{display:none}
-  .hbg{display:flex}
-  .section{padding:72px 36px}
-  #hero{grid-template-columns:1fr}
-  .hero-left{padding:80px 36px 56px;text-align:center}
-  .hero-left::after{display:none}
-  .hero-tagline{margin:0 auto 44px}
-  .hero-ctas{max-width:100%}
-  .cta-main,.cta-sub{justify-content:center}
-  .hero-right{min-height:460px}
-  .hero-badges{bottom:24px;left:24px}
-  .strip{padding:16px 28px;justify-content:center;gap:16px}
-  #reset-section{padding:80px 36px}
-  .rbenefits{grid-template-columns:1fr}
-  #sobre{grid-template-columns:1fr;gap:48px;padding:72px 36px}
-  .sobre-frame img{height:380px}
-  .sobre-acc{right:16px;bottom:-16px}
-  #formacao{padding:72px 36px}
-  .flist{grid-template-columns:1fr}
-  .egrid{grid-template-columns:repeat(2,1fr)}
-  #metodo{grid-template-columns:1fr;gap:48px;padding:72px 36px}
-  #presencial{grid-template-columns:1fr;gap:36px;padding:72px 36px}
-  footer{padding:48px 36px 32px}
-  .ftop{grid-template-columns:1fr;gap:32px}
-  .fbot{flex-direction:column;gap:8px;text-align:center}
-}
-@media(max-width:640px){
-  .section{padding:60px 20px}
-  .hero-left{padding:64px 20px 48px}
-  .strip{padding:12px 20px;gap:10px}
-  .si{font-size:.68rem}
-  #reset-section{padding:60px 20px}
-  .rheadline{font-size:2.1rem}
-  .btn-reset{padding:16px 24px;font-size:.92rem}
-  #sobre,#formacao,#metodo,#presencial{padding:60px 20px}
-  footer{padding:44px 20px 28px}
-  .egrid{grid-template-columns:1fr}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Isabella Bianchi - Nutricionista em Barra da Tijuca, RJ. Emagrecimento saudável, nutrição comportamental e Protocolo Reset 45 Dias. Atendimento humanizado, sem dietas radicais. Agende sua consulta presencial ou conheça o Protocolo Reset.">
+    <meta name="keywords" content="nutricionista barra da tijuca, emagrecimento saudável, nutrição comportamental, protocolo reset 45 dias, nutricionista rio de janeiro, isabella bianchi">
+    <meta name="author" content="Isabella Bianchi">
+    <meta property="og:title" content="Isabella Bianchi | Nutricionista - Emagrecimento Saudável e Humanizado">
+    <meta property="og:description" content="Transforme sua relação com o corpo de forma leve, sustentável e com ciência. Atendimento presencial na Barra da Tijuca e Protocolo Reset 45 Dias.">
+    <meta property="og:image" content="./images/foto-profissional-3.png">
+    <meta property="og:url" content="https://isabellabianchi.com.br">
+    <title>Isabella Bianchi • Nutricionista | Emagrecimento Saudável • Barra da Tijuca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap');
+        
+        :root {
+            --tw-color-primary: #10b981;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .tail-container * {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(92deg, rgba(16, 185, 129, 0.92) 0%, rgba(244, 63, 94, 0.85) 100%);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 64px;
+            height: 3px;
+            background: #10b981;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 9999px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 25px 25px 50px -12px rgb(16 185 129 / 0.15);
+        }
+        
+        .floating-wa {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .photo-frame {
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+        }
+    </style>
 </head>
-<body>
+<body class="tail-container">
+    <!-- NAVEGAÇÃO SIMPLES E ELEGANTE -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-emerald-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl leading-none pt-0.5">IB</div>
+                <div>
+                    <span class="text-2xl font-semibold tracking-tight heading-font text-stone-900">Isabella Bianchi</span>
+                    <p class="text-emerald-700 text-xs -mt-1 font-medium tracking-[1px]">NUTRICIONISTA</p>
+                </div>
+            </div>
+            
+            <!-- Links Desktop -->
+            <div class="hidden md:flex items-center gap-x-8 text-stone-700 font-medium">
+                <a href="#sobre" class="hover:text-emerald-700">Sobre mim</a>
+                <a href="#formacao" class="hover:text-emerald-700">Formação</a>
+                <a href="#especialidades" class="hover:text-emerald-700">Especialidades</a>
+                <a href="#metodo" class="hover:text-emerald-700">Meu método</a>
+                <a href="#presencial" class="hover:text-emerald-700">Atendimento Presencial</a>
+            </div>
+            
+            <!-- CTA WhatsApp Desktop -->
+            <a href="https://wa.me/5521988784380?text=Olá%20Isabella%2C%20vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta."
+               target="_blank"
+               class="hidden md:flex items-center gap-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-3xl font-semibold text-sm">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Falar no WhatsApp</span>
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-3xl text-stone-700">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
+            <div class="flex flex-col gap-y-4 text-stone-700 font-medium">
+                <a href="#sobre" class="py-2 border-b">Sobre mim</a>
+                <a href="#formacao" class="py-2 border-b">Formação e experiência</a>
+                <a href="#especialidades" class="py-2 border-b">Especialidades</a>
+                <a href="#metodo" class="py-2 border-b">Meu método</a>
+                <a href="#presencial" class="py-2 border-b">Atendimento Presencial</a>
+                <a href="https://reset.isabellabianchi.com.br/" class="py-2 border-b text-rose-600 font-semibold">Protocolo Reset 45 Dias</a>
+                
+                <a href="https://wa.me/5521988784380?text=Olá%20Isabella%2C%20vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta."
+                   target="_blank"
+                   class="mt-4 flex items-center justify-center gap-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-3xl font-semibold text-base">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Agendar consulta agora
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-logo"><img src="logo_isabela_bianchi.webp" alt="Isabella Bianchi Nutricionista"/></div>
-  <div class="nav-right">
-    <a href="#sobre" class="nav-link">Sobre</a>
-    <a href="#especialidades" class="nav-link">Especialidades</a>
-    <a href="#reset-section" class="nav-link">Protocolo Reset</a>
-    <a href="https://reset.isabellabianchi.com.br/" class="nav-btn" target="_blank" rel="noopener">Quero o Protocolo →</a>
-  </div>
-  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
+    <!-- HERO SECTION -->
+    <header id="hero" class="hero-bg text-white min-h-screen flex items-center relative overflow-hidden">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center pt-12 md:pt-0">
+            <!-- Texto -->
+            <div class="md:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/20 text-white text-sm font-medium px-5 py-2 rounded-3xl backdrop-blur-md">
+                    <div class="w-2 h-2 bg-emerald-300 rounded-full animate-pulse"></div>
+                    BARRA DA TIJUCA • RIO DE JANEIRO
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-semibold leading-none heading-font tracking-tighter">
+                    Isabella Bianchi
+                </h1>
+                <p class="text-3xl md:text-4xl font-light text-white/90">Nutricionista</p>
+                
+                <div class="max-w-lg">
+                    <p class="text-2xl md:text-3xl leading-tight font-medium">
+                        Ajudo homens e mulheres a entenderem e respeitarem seu próprio corpo — sem dietas restritivas e punitivas.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5521988784380?text=Olá%20Isabella%2C%20quero%20agendar%20minha%20consulta%20presencial%20na%20Barra%20da%20Tijuca."
+                       target="_blank"
+                       class="flex-1 md:flex-none bg-white text-emerald-700 hover:bg-amber-50 px-10 py-5 rounded-3xl font-semibold text-xl flex items-center justify-center gap-x-3 shadow-xl">
+                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        AGENDAR CONSULTA PRESENCIAL
+                    </a>
+                    
+                    <a href="https://reset.isabellabianchi.com.br/"
+                       target="_blank"
+                       class="flex-1 md:flex-none border-2 border-white hover:bg-white/10 px-10 py-5 rounded-3xl font-semibold text-xl flex items-center justify-center">
+                        CONHECER O PROTOCOLO RESET 45 DIAS
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-x-8 text-sm pt-4">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-emerald-300"></i>
+                        <span>18+ anos de experiência</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-emerald-300"></i>
+                        <span>Mãe • Casada • Flamenguista</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-emerald-300"></i>
+                        <span>Atendimento humanizado</span>
+                    </div>
+                </div>
+                
+                <!-- Trust signals -->
+                <div class="flex flex-wrap items-center gap-x-8 text-white/80 text-sm pt-6 border-t border-white/30">
+                    <div class="flex items-center gap-x-3">
+                        <img src="./images/foto-profissional-3.png" alt="Isabella Bianchi" class="w-9 h-9 object-cover rounded-2xl">
+                        <div>
+                            <p class="font-medium">Formada UFRJ</p>
+                            <p class="text-xs">Mestrado em Nutrição Humana</p>
+                        </div>
+                    </div>
+                    <div>★ ★ ★ ★ ★</div>
+                    <p class="italic">"Transformei minha relação com a comida e com meu corpo"</p>
+                </div>
+            </div>
+            
+            <!-- Foto Hero -->
+            <div class="md:col-span-5 flex justify-center md:justify-end">
+                <div class="relative">
+                    <img src="./images/foto-profissional.jpeg" 
+                         alt="Isabella Bianchi - Nutricionista"
+                         class="photo-frame w-full max-w-md md:max-w-lg rounded-3xl object-cover shadow-2xl">
+                    <div class="absolute -bottom-4 -right-4 bg-white text-emerald-700 px-6 py-3 rounded-3xl shadow-xl flex items-center gap-x-3 text-lg font-semibold">
+                        <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                        Saúde com leveza
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="hidden xl:flex absolute bottom-10 left-1/2 flex-col items-center text-white/70 text-xs tracking-widest">
+            <div class="mb-2">ROLE PARA CONHECER</div>
+            <i class="fa-solid fa-chevron-down animate-bounce text-2xl"></i>
+        </div>
+        
+        <!-- Floating WhatsApp -->
+        <a href="https://wa.me/5521988784380?text=Olá%20Isabella%2C%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20conversar."
+           target="_blank"
+           class="floating-wa fixed bottom-8 right-8 z-[9999] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 text-4xl">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </header>
 
-<!-- MOBILE OVERLAY -->
-<div class="mob-overlay" id="mob-overlay">
-  <a href="#sobre" onclick="closeMenu()">Sobre</a>
-  <a href="#especialidades" onclick="closeMenu()">Especialidades</a>
-  <a href="#reset-section" onclick="closeMenu()">Protocolo Reset</a>
-  <a href="#presencial" onclick="closeMenu()">Presencial</a>
-  <a href="https://reset.isabellabianchi.com.br/" class="mob-cta-btn" target="_blank" rel="noopener" onclick="closeMenu()">Quero o Protocolo →</a>
-</div>
+    <!-- SOBRE MIM / APRESENTAÇÃO -->
+    <section id="sobre" class="py-20 bg-stone-50">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <img src="./images/foto-profissional-3.png" 
+                         alt="Isabella Bianchi - Nutricionista"
+                         class="rounded-3xl w-full photo-frame">
+                </div>
+                
+                <div class="md:col-span-7 space-y-8">
+                    <div class="inline-flex px-5 py-1.5 bg-emerald-100 text-emerald-700 rounded-3xl text-sm font-semibold">MINHA HISTÓRIA</div>
+                    <h2 class="text-5xl font-semibold heading-font tracking-tight text-stone-900">Olá, eu sou a Isabella.</h2>
+                    
+                    <div class="prose prose-stone text-lg leading-relaxed max-w-none">
+                        <p>Tenho 42 anos, sou casada, mãe de duas filhas e de um pet. Nasci em Campinas, mudei para o Rio de Janeiro aos 10 anos e me apaixonei pela cidade — e pelo Flamengo.</p>
+                        <p>Na adolescência enfrentei dificuldades com peso e dietas radicais. Essa experiência me mostrou o quanto as abordagens punitivas podem ser dolorosas e ineficazes.</p>
+                        <p>Contrariando as expectativas da família, escolhi a nutrição como profissão. Ao longo dos últimos 18 anos, vivi na prática a compulsão, o estresse e os desafios que muitas pessoas enfrentam. Foi exatamente essa vivência que me fez desenvolver uma abordagem mais humana, acolhedora e baseada em ciência.</p>
+                        <p>Hoje ajudo homens e mulheres a reconectarem com o próprio corpo de forma leve, respeitosa e duradoura.</p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-6 text-sm">
+                        <div class="flex items-center gap-x-3 bg-white px-6 py-4 rounded-3xl shadow-sm">
+                            <i class="fa-solid fa-heart text-rose-500 text-2xl"></i>
+                            <div>
+                                <strong>Casada</strong><br>
+                                <span class="text-stone-500">Mãe de duas filhas</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-x-3 bg-white px-6 py-4 rounded-3xl shadow-sm">
+                            <i class="fa-solid fa-paw text-amber-500 text-2xl"></i>
+                            <div>
+                                <strong>Mãe de pet</strong>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-x-3 bg-white px-6 py-4 rounded-3xl shadow-sm">
+                            <i class="fa-solid fa-flag text-red-500 text-2xl"></i>
+                            <div>
+                                <strong>Flamenguista</strong><br>
+                                <span class="text-stone-500">Apaixonada pelo Rio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="hero-kicker">
-      <span class="hk-line"></span>
-      <p>Nutricionista Clínica &amp; Comportamental</p>
-    </div>
-    <h1 class="display hero-name">Isabella<span class="line2">Bianchi</span></h1>
-    <p class="hero-cred">Formada pela UFRJ &nbsp;·&nbsp; Mestre em Nutrição Humana &nbsp;·&nbsp; Coaching ICF</p>
-    <p class="hero-tagline">
-      Ajudo você a <strong>entender e respeitar o seu próprio corpo</strong>
-      sem dietas restritivas — com um método que une nutrição,
-      metabolismo e psicologia comportamental.
-    </p>
-    <div class="hero-ctas">
-      <a class="cta-main" href="https://reset.isabellabianchi.com.br/" target="_blank" rel="noopener">
-        <span class="tag-pill">NOVO</span>
-        Conheça o Protocolo Reset 45 Dias
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="cta-sub" href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20.4 3.6A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.6-8.4zm-8.4 18.4c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.1-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1a8.4 8.4 0 0 1-4.2-3.7c-.2-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.8 1.2 3c.2.2 2 3 4.8 4.2 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.5l-.7-.2z" fill="currentColor"/></svg>
-        Agendar consulta presencial
-      </a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img src="foto_isabella_bianchi.webp" alt="Isabella Bianchi — Nutricionista"/>
-    <div class="hero-badges">
-      <div class="hbadge"><span class="bn">18+</span><div class="bl">anos de experiência</div></div>
-      <div class="hbadge gold"><span class="bn">ICF</span><div class="bl">Coach certificada</div></div>
-    </div>
-  </div>
-</section>
+    <!-- FORMAÇÃO E AUTORIDADE -->
+    <section id="formacao" class="py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-flex px-5 py-1.5 bg-emerald-100 text-emerald-700 rounded-3xl text-sm font-semibold mb-4">AUTORIDADE E FORMAÇÃO</div>
+                <h2 class="text-5xl font-semibold heading-font tracking-tight text-stone-900">Credibilidade que você pode confiar</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-stone-50 p-8 rounded-3xl card-hover">
+                    <div class="text-emerald-600 text-5xl mb-4">🎓</div>
+                    <h4 class="font-semibold text-xl mb-2">Graduação</h4>
+                    <p class="text-stone-600">Nutricionista formada pela <strong>UFRJ</strong></p>
+                </div>
+                
+                <div class="bg-stone-50 p-8 rounded-3xl card-hover">
+                    <div class="text-emerald-600 text-5xl mb-4">📘</div>
+                    <h4 class="font-semibold text-xl mb-2">Pós-graduação</h4>
+                    <p class="text-stone-600">Nutrição Clínica e Hospitalar</p>
+                </div>
+                
+                <div class="bg-stone-50 p-8 rounded-3xl card-hover">
+                    <div class="text-emerald-600 text-5xl mb-4">🔬</div>
+                    <h4 class="font-semibold text-xl mb-2">Mestrado</h4>
+                    <p class="text-stone-600">Nutrição Humana e Metabolismo</p>
+                </div>
+                
+                <div class="bg-stone-50 p-8 rounded-3xl card-hover">
+                    <div class="text-emerald-600 text-5xl mb-4">🧠</div>
+                    <h4 class="font-semibold text-xl mb-2">Certificação Internacional</h4>
+                    <p class="text-stone-600">Coaching de Nutrição e Emagrecimento pela <strong>ICF</strong></p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 bg-emerald-50 rounded-3xl p-8 max-w-2xl mx-auto">
+                <p class="text-2xl font-medium text-emerald-800">+18 anos de experiência em atendimento clínico e hospitalar</p>
+                <p class="mt-4 text-stone-600">Combinando ciência, empatia e vivência real para resultados que realmente duram.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- CREDENTIAL STRIP -->
-<div class="strip">
-  <div class="si">Nutricionista formada pela UFRJ</div>
-  <div class="si">Pós-graduada em Nutrição Clínica e Hospitalar</div>
-  <div class="si">Mestrado em Nutrição Humana e Metabolismo</div>
-  <div class="si">Coaching certificada pela ICF</div>
-  <div class="si">+18 anos de experiência clínica</div>
-</div>
+    <!-- ESPECIALIDADES -->
+    <section id="especialidades" class="py-20 bg-stone-50">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-flex px-5 py-1.5 bg-rose-100 text-rose-600 rounded-3xl text-sm font-semibold mb-4">O QUE EU FAÇO</div>
+                <h2 class="text-5xl font-semibold heading-font tracking-tight text-stone-900">Minhas especialidades</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-3xl card-hover border border-transparent hover:border-emerald-200 text-center">
+                    <div class="mx-auto w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center text-4xl mb-6">⚖️</div>
+                    <h4 class="font-semibold text-2xl mb-2">Emagrecimento Saudável</h4>
+                    <p class="text-stone-600">Perda de peso sem sofrimento, com foco em hábitos sustentáveis.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl card-hover border border-transparent hover:border-emerald-200 text-center">
+                    <div class="mx-auto w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center text-4xl mb-6">👩‍👧‍👦</div>
+                    <h4 class="font-semibold text-2xl mb-2">Nutrição Materno-Infantil</h4>
+                    <p class="text-stone-600">Gestação, amamentação e alimentação das crianças com carinho e ciência.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl card-hover border border-transparent hover:border-emerald-200 text-center">
+                    <div class="mx-auto w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center text-4xl mb-6">🧘‍♀️</div>
+                    <h4 class="font-semibold text-2xl mb-2">Nutrição Comportamental</h4>
+                    <p class="text-stone-600">Trabalho a relação emocional com a comida e o corpo.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl card-hover border border-transparent hover:border-emerald-200 text-center">
+                    <div class="mx-auto w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-4xl mb-6">🎯</div>
+                    <h4 class="font-semibold text-2xl mb-2">Coaching de Nutrição</h4>
+                    <p class="text-stone-600">Certificada pela ICF. Estratégias práticas para transformação real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- PROTOCOLO RESET — PRIMARY FOCUS -->
-<section id="reset-section">
-  <div class="ri">
-    <div class="rtag au">
-      <div class="rdot"></div>
-      <span>Programa Online &nbsp;·&nbsp; Resultado Real</span>
-    </div>
-    <h2 class="display rheadline au d1">
-      Cansada de dieta<br/>que <em>não funciona?</em>
-    </h2>
-    <p class="rsubline au d2">
-      Você não precisa de mais uma dieta genérica.<br/>
-      Precisa de um plano de <strong>45 dias pensado para o seu corpo,
-      sua rotina</strong> e o que realmente te faz sair do caminho.
-    </p>
-    <div class="rbenefits au d2">
-      <div class="rb">
-        <span class="rbicon">🧬</span>
-        <h4>Personalizado para você</h4>
-        <p>Não é protocolo genérico. É nutrição + comportamento alinhados à sua realidade.</p>
-      </div>
-      <div class="rb">
-        <span class="rbicon">🧠</span>
-        <h4>Psicologia + Nutrição</h4>
-        <p>Estratégias ICF que vão além da comida — para mudar de vez a relação com seu corpo.</p>
-      </div>
-      <div class="rb">
-        <span class="rbicon">🌱</span>
-        <h4>Resultados que ficam</h4>
-        <p>Sem efeito sanfona, sem culpa, sem restrição absurda. Sustentável de verdade.</p>
-      </div>
-    </div>
-    <div class="au d3">
-      <a class="btn-reset" href="https://reset.isabellabianchi.com.br/" target="_blank" rel="noopener">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Quero conhecer o Protocolo Reset 45 Dias
-      </a>
-      <p class="rfine">Acesse a página do programa · Sem compromisso</p>
-    </div>
-  </div>
-</section>
+    <!-- MÉTODO / DIFERENCIAL -->
+    <section id="metodo" class="py-20 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16">
+                <div class="md:col-span-7">
+                    <div class="inline-flex px-5 py-1.5 bg-rose-100 text-rose-600 rounded-3xl text-sm font-semibold">MEU DIFERENCIAL</div>
+                    <h2 class="text-5xl font-semibold heading-font tracking-tight text-stone-900 mt-3">Não é mais uma dieta. É uma transformação.</h2>
+                    
+                    <div class="mt-10 space-y-10">
+                        <div class="flex gap-6">
+                            <div class="text-5xl text-emerald-500">01</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Sem restrições punitivas</h3>
+                                <p class="mt-3 text-lg text-stone-600">Não trabalho com dietas radicais. Ajudamos o corpo a funcionar melhor, respeitando sua individualidade.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-5xl text-emerald-500">02</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Ciência + Psicologia</h3>
+                                <p class="mt-3 text-lg text-stone-600">Uno meu mestrado em metabolismo com as ferramentas de coaching pela ICF para resultados que duram.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-5xl text-emerald-500">03</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Cuidado humanizado</h3>
+                                <p class="mt-3 text-lg text-stone-600">Cada plano é pensado para a sua rotina, suas emoções e sua vida real. O objetivo é você se sentir bem no seu corpo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5">
+                    <img src="./images/foto-profissional-2.jpeg" 
+                         alt="Isabella Bianchi com xícara de café"
+                         class="rounded-3xl w-full photo-frame h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- SOBRE -->
-<section id="sobre" class="section" style="background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center">
-  <div style="position:relative" class="au">
-    <div class="sobre-frame">
-      <img src="foto_isabella_bianchi.webp" alt="Isabella Bianchi"/>
-    </div>
-    <div class="sobre-acc">
-      <span class="an">18+</span>
-      <div class="al">anos de carreira</div>
-    </div>
-  </div>
-  <div class="au d1">
-    <span class="slabel">Quem sou eu</span>
-    <h2 class="display stitle">Uma história que<br/>começou em mim</h2>
-    <div class="srule"></div>
-    <p class="sbody-p">
-      Nasci em Campinas e vim para o Rio de Janeiro aos 10 anos — e nunca mais quis sair. Sou <strong>flamenguista</strong>, apaixonada por essa cidade e mãe das minhas duas filhas, Izabel e Sofia, e de um pet que completa a família.
-    </p>
-    <p class="sbody-p">
-      Na adolescência, eu mesma sofri com <strong>dietas radicais</strong>. Cansada do efeito sanfona e da culpa constante, mergulhei nos livros de nutrição por curiosidade — e foi amor. Contrariando a expectativa da minha família, escolhi seguir a nutrição.
-    </p>
-    <p class="sbody-p">
-      Ao longo da carreira, vivi na pele os desafios da compulsão e do estresse das abordagens restritivas. Por isso me especializei em <strong>caminhos mais humanos, menos punitivos e com resultados duradouros</strong> — aqueles que cabem na vida real.
-    </p>
-    <div class="chips">
-      <span class="chip">🌿 Rio de Janeiro</span>
-      <span class="chip">❤️‍🔥 Flamenguista</span>
-      <span class="chip">👧 Mãe de 2</span>
-      <span class="chip">🐾 Pet mom</span>
-      <span class="chip">🎓 UFRJ</span>
-    </div>
-  </div>
-</section>
+    <!-- CTA PRESENCIAL -->
+    <section id="presencial" class="py-16 bg-gradient-to-r from-emerald-700 to-emerald-600 text-white">
+        <div class="max-w-screen-2xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-semibold heading-font">Atendimento presencial na Barra da Tijuca</h2>
+            <p class="mt-6 text-2xl max-w-xl mx-auto">Um espaço acolhedor para cuidarmos da sua saúde com calma, ciência e muito carinho.</p>
+            
+            <a href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial%20na%20Barra%20da%20Tijuca"
+               target="_blank"
+               class="mt-12 inline-flex items-center justify-center gap-x-4 bg-white text-emerald-700 hover:bg-amber-50 px-16 py-7 rounded-3xl text-2xl font-semibold shadow-2xl">
+                <i class="fa-brands fa-whatsapp text-4xl"></i>
+                CLIQUE E AGENDE AGORA
+            </a>
+            
+            <p class="text-emerald-100 mt-6 text-sm">Vagas limitadas • Atendimento personalizado</p>
+        </div>
+    </section>
 
-<!-- FORMAÇÃO -->
-<section id="formacao">
-  <span class="slabel">Formação &amp; Credenciais</span>
-  <h2 class="display stitle" style="color:#fff">Preparação que<br/>gera confiança</h2>
-  <div class="srule"></div>
-  <div class="flist">
-    <div class="fitem au"><div class="fnum">01</div><h3>Nutricionista — UFRJ</h3><p>Formação em uma das universidades mais respeitadas do Brasil, base sólida para toda a trajetória.</p></div>
-    <div class="fitem au d1"><div class="fnum">02</div><h3>Pós-Graduação em Nutrição Clínica e Hospitalar</h3><p>Especialização voltada ao atendimento clínico de alta complexidade e cuidado individualizado.</p></div>
-    <div class="fitem au d2"><div class="fnum">03</div><h3>Mestrado em Nutrição Humana e Metabolismo</h3><p>Pesquisa aprofundada sobre como o metabolismo responde às intervenções nutricionais.</p></div>
-    <div class="fitem au d3"><div class="fnum">04</div><h3>Coaching de Nutrição — ICF Certificada</h3><p>International Coaching Federation — estratégias comportamentais integradas à nutrição clínica.</p></div>
-  </div>
-</section>
+    <!-- CTA PROTOCOLO RESET 45 DIAS -->
+    <section class="py-20 bg-gradient-to-br from-rose-600 to-pink-600 text-white relative overflow-hidden">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <div class="text-amber-200 uppercase tracking-[2px] text-sm font-medium">CANSADO DE DIETAS QUE NÃO FUNCIONAM?</div>
+                    <h2 class="text-5xl md:text-6xl font-semibold heading-font leading-none mt-4">Você não precisa de mais uma dieta genérica.</h2>
+                    <p class="mt-8 text-2xl">Precisa de um plano de <span class="font-bold">45 dias</span> pensado para o seu corpo, sua rotina e o que realmente faz você sair do caminho.</p>
+                    
+                    <div class="mt-12">
+                        <a href="https://reset.isabellabianchi.com.br/" 
+                           target="_blank"
+                           class="inline-flex items-center gap-x-4 bg-white text-rose-600 px-12 py-7 rounded-3xl text-3xl font-semibold hover:shadow-2xl">
+                            CONHEÇA O PROTOCOLO RESET 45 DIAS
+                            <span class="text-4xl">→</span>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center gap-x-8 text-sm opacity-90">
+                        <div class="flex items-center gap-x-2">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Resultados saudáveis</span>
+                        </div>
+                        <div class="flex items-center gap-x-2">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>45 dias transformadores</span>
+                        </div>
+                        <div class="flex items-center gap-x-2">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Sem sofrimento</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5 hidden md:block">
+                    <div class="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 text-center">
+                        <div class="text-7xl mb-6">🔄</div>
+                        <h3 class="text-3xl font-semibold">Reset completo</h3>
+                        <p class="text-xl mt-3">Metabolismo • Emoções • Hábitos</p>
+                        <div class="h-px bg-white/30 my-8"></div>
+                        <p class="text-amber-200">Comece hoje a construir a versão mais leve e saudável de você.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ESPECIALIDADES -->
-<section id="especialidades" class="section">
-  <span class="slabel">Especialidades</span>
-  <h2 class="display stitle">Onde posso te ajudar</h2>
-  <div class="srule"></div>
-  <div class="egrid">
-    <div class="ecard au"><span class="eicon">⚖️</span><h3>Emagrecimento</h3><p>Estratégias personalizadas para perder peso de forma saudável, respeitando seu metabolismo e sua rotina.</p></div>
-    <div class="ecard au d1"><span class="eicon">🤱</span><h3>Nutrição Materno-Infantil</h3><p>Cuidado nutricional durante a gestação, amamentação e nos primeiros anos de vida.</p></div>
-    <div class="ecard au d2"><span class="eicon">🧠</span><h3>Nutrição Comportamental</h3><p>Abordagem que une emoções, comportamento alimentar e psicologia para uma relação mais saudável com a comida.</p></div>
-    <div class="ecard au d3"><span class="eicon">🚀</span><h3>Coaching de Nutrição</h3><p>Ferramentas ICF integradas ao conhecimento nutricional para mudanças reais e duradouras.</p></div>
-  </div>
-</section>
+    <!-- RODAPÉ -->
+    <footer class="bg-stone-900 text-white py-16">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <!-- Logo + Nome -->
+                <div>
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <div class="w-10 h-10 bg-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">IB</div>
+                        <span class="text-3xl font-semibold heading-font">Isabella Bianchi</span>
+                    </div>
+                    <p class="text-stone-400 max-w-xs">Nutricionista • Emagrecimento saudável • Nutrição comportamental</p>
+                </div>
+                
+                <!-- Links rápidos -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-8">
+                    <div>
+                        <p class="uppercase text-xs text-stone-400 mb-4">Contato</p>
+                        <a href="https://wa.me/5521988784380" target="_blank" class="flex items-center gap-x-2 text-stone-300 hover:text-white mb-3">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>(21) 98878-4380</span>
+                        </a>
+                        <a href="https://instagram.com/isabellabianchinutri" target="_blank" class="flex items-center gap-x-2 text-stone-300 hover:text-white">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>@isabellabianchinutri</span>
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <p class="uppercase text-xs text-stone-400 mb-4">Atendimento</p>
+                        <p class="text-stone-400">Barra da Tijuca • Rio de Janeiro</p>
+                        <p class="text-emerald-400 text-sm mt-6">Presencial e acompanhamento online</p>
+                    </div>
+                    
+                    <div>
+                        <p class="uppercase text-xs text-stone-400 mb-4">Protocolo</p>
+                        <a href="https://reset.isabellabianchi.com.br/" target="_blank" class="text-rose-400 font-medium flex items-center gap-x-1">
+                            Reset 45 Dias 
+                            <span class="text-xl leading-none">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-700 mt-16 pt-8 text-xs text-stone-500 flex flex-col md:flex-row justify-between items-center gap-y-4">
+                <p>© 2026 Isabella Bianchi Nutricionista • Todos os direitos reservados</p>
+                <p class="flex items-center gap-x-1">Feito com <i class="fa-solid fa-heart text-rose-500"></i> para quem quer viver melhor</p>
+                <p>Site premium • Otimizado para mobile</p>
+            </div>
+        </div>
+    </footer>
 
-<!-- MÉTODO -->
-<section id="metodo" class="section" style="background:var(--warm);display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center">
-  <div class="au">
-    <span class="slabel">Meu Método</span>
-    <h2 class="display stitle">Sem restrição.<br/>Com resultado.</h2>
-    <div class="srule"></div>
-    <p class="sbody">Não trabalho com dietas genéricas ou punitivas. Minha abordagem une <strong>nutrição clínica, metabolismo e psicologia comportamental</strong> — para devolver a você um corpo saudável de um jeito que cabe na sua vida real.</p>
-    <div class="mpoints">
-      <div class="mp"><div class="mpcheck">✓</div><div class="mptext"><h4>Sem punição ou culpa</h4><p>Nenhuma dieta radical que te faça se sentir mal por comer.</p></div></div>
-      <div class="mp"><div class="mpcheck">✓</div><div class="mptext"><h4>Ciência + comportamento</h4><p>Nutrição e psicologia trabalhando juntas pelo mesmo resultado.</p></div></div>
-      <div class="mp"><div class="mpcheck">✓</div><div class="mptext"><h4>Resultados duradouros</h4><p>Mudanças sustentáveis — sem o efeito sanfona de sempre.</p></div></div>
-    </div>
-  </div>
-  <div class="mstats au d1">
-    <div class="mstat"><div class="mn">18+</div><div class="ml">anos de experiência em atendimento clínico e hospitalar</div></div>
-    <div class="mstat"><div class="mn">45</div><div class="ml">dias para transformar sua relação com o corpo e a comida</div></div>
-    <div class="mstat"><div class="mn">ICF</div><div class="ml">certificação internacional em Coaching de Nutrição e Emagrecimento</div></div>
-  </div>
-</section>
-
-<!-- PRESENCIAL -->
-<section id="presencial">
-  <div class="au">
-    <span class="slabel">Atendimento Presencial</span>
-    <h2 class="display stitle">Barra da Tijuca,<br/>Rio de Janeiro</h2>
-    <div class="srule"></div>
-    <p class="sbody">Atendo presencialmente na Barra da Tijuca. Um espaço acolhedor onde você recebe atenção total — sem pressa, sem fórmulas prontas.</p>
-    <a class="btn-wa" href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20.4 3.6A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.6-8.4zm-8.4 18.4c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.1-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1a8.4 8.4 0 0 1-4.2-3.7c-.2-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.8 1.2 3c.2.2 2 3 4.8 4.2 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.5l-.7-.2z" fill="currentColor"/></svg>
-      Agendar via WhatsApp
-    </a>
-  </div>
-  <div class="pinfo au d2">
-    <div class="pirow"><span class="piicon">📍</span><div><strong>Barra da Tijuca</strong>Rio de Janeiro — RJ</div></div>
-    <div class="pirow"><span class="piicon">📱</span><div><strong>(21) 98878-4380</strong>WhatsApp disponível</div></div>
-    <div class="pirow"><span class="piicon">📸</span><div><strong>@isabellabianchinutri</strong>Instagram — dicas diárias</div></div>
-    <div class="pirow"><span class="piicon">🗓️</span><div><strong>Consultas com hora marcada</strong>Atendimento individualizado e personalizado</div></div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="ftop">
-    <div class="fbrand">
-      <img src="logo_isabela_bianchi.webp" alt="Isabella Bianchi"/>
-      <p>Nutricionista especialista em Emagrecimento, Nutrição Comportamental e Coaching ICF. Barra da Tijuca, Rio de Janeiro.</p>
-    </div>
-    <div class="fcol">
-      <h5>Contato</h5>
-      <a href="https://wa.me/5521988784380" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 3.6A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.6-8.4zm-8.4 18.4c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.1-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1a8.4 8.4 0 0 1-4.2-3.7c-.2-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.8 1.2 3c.2.2 2 3 4.8 4.2 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.5l-.7-.2z"/></svg>
-        (21) 98878-4380
-      </a>
-      <a href="https://instagram.com/isabellabianchinutri" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9C2.1 15.6 2 15.3 2 12s0-3.6.1-4.8C2.3 3.9 4 2.3 7.2 2.2 8.4 2.1 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9C.3 21.3 2.7 23.7 7.1 23.9c1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>
-        @isabellabianchinutri
-      </a>
-    </div>
-    <div class="fcol">
-      <h5>Links</h5>
-      <a href="#sobre">Sobre Isabella</a>
-      <a href="#especialidades">Especialidades</a>
-      <a href="https://reset.isabellabianchi.com.br/" target="_blank" rel="noopener">Protocolo Reset 45 Dias</a>
-      <a href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial" target="_blank" rel="noopener">Agendar Consulta Presencial</a>
-    </div>
-  </div>
-  <div class="fbot">
-    <span>© 2025 Isabella Bianchi — Nutricionista. Todos os direitos reservados.</span>
-    <span>Barra da Tijuca · Rio de Janeiro · RJ</span>
-  </div>
-</footer>
-
-<!-- FLOATING WA -->
-<a class="wafloat" href="https://wa.me/5521988784380?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M20.4 3.6A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.6-8.4zm-8.4 18.4c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A9.9 9.9 0 0 1 2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.1-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1a8.4 8.4 0 0 1-4.2-3.7c-.2-.4.2-.4.6-1.3.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.8 1.2 3c.2.2 2 3 4.8 4.2 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.5l-.7-.2z"/></svg>
-</a>
-
-<script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
-const hbg=document.getElementById('hbg'),overlay=document.getElementById('mob-overlay');
-hbg.addEventListener('click',()=>{
-  hbg.classList.toggle('open');overlay.classList.toggle('open');
-  document.body.style.overflow=overlay.classList.contains('open')?'hidden':'';
-});
-function closeMenu(){hbg.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow=''}
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
-},{threshold:.08});
-document.querySelectorAll('.au').forEach(el=>obs.observe(el));
-</script>
+    <script>
+        // Tailwind CDN Configuration
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        content: [],
+                        theme: {
+                            extend: {
+                                colors: {
+                                    primary: '#10b981',
+                                    accent: '#e11d48'
+                                }
+                            }
+                        },
+                        plugins: [],
+                        ...userConfig,
+                    }
+                },
+                theme: {
+                    extend: {},
+                },
+            }
+        }
+        
+        // Inicializa Tailwind
+        document.addEventListener('DOMContentLoaded', () => {
+            const config = initializeTailwind().config()
+            return window.tailwindConfig = config
+        })
+        
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn')
+        const mobileMenu = document.getElementById('mobile-menu')
+        
+        mobileBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.style.display = 'block'
+                mobileBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+            } else {
+                mobileMenu.style.display = 'none'
+                mobileBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`
+            }
+            mobileMenu.classList.toggle('hidden')
+        })
+        
+        // Scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return
+                e.preventDefault()
+                const target = document.querySelector(this.getAttribute('href'))
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    })
+                    // Fecha menu mobile se estiver aberto
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden')
+                        mobileBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`
+                    }
+                }
+            })
+        })
+        
+        console.log('%c✅ Site Isabella Bianchi carregado com sucesso. Pronto para produção no Vercel + GitHub!', 'color:#10b981; font-family:monospace; font-size:13px')
+    </script>
 </body>
 </html>
