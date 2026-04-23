@@ -202,10 +202,19 @@
       transition: color .2s;
     }
     .nav-insta:hover { color: var(--coral); }
-    .nav-btn { padding: 11px 22px; font-size: .85rem; }
+    .nav-btn {
+      padding: 11px 22px;
+      font-size: .85rem;
+      background: var(--coral) !important;
+      box-shadow: 0 4px 18px rgba(224,122,95,.38) !important;
+    }
+    .nav-btn:hover {
+      background: var(--coral-dk) !important;
+      box-shadow: 0 8px 28px rgba(224,122,95,.48) !important;
+    }
     @media (max-width: 540px) {
       .nav-insta { display: none; }
-      .nav-btn { padding: 10px 18px; font-size: .8rem; }
+      .nav-btn { padding: 10px 16px; font-size: .78rem; }
     }
 
     /* ===================== HERO ===================== */
@@ -752,7 +761,6 @@
       padding: 100px 0;
       background: var(--cream);
       position: relative;
-      overflow: hidden;
     }
     .reset-inner {
       background: linear-gradient(135deg, var(--coral) 0%, #C4614A 100%);
@@ -876,10 +884,17 @@
     @media (max-width: 768px) {
       .reset-inner {
         grid-template-columns: 1fr;
-        padding: 44px 28px;
-        gap: 36px;
+        padding: 40px 24px;
+        gap: 32px;
+        text-align: center;
       }
+      .reset-eyebrow { justify-content: center; }
+      .reset-inner .btn { width: 100%; justify-content: center; }
+      .reset-pill { text-align: left; }
       .reset-days-badge { display: none; }
+    }
+    @media (max-width: 400px) {
+      .reset-inner { padding: 32px 16px; }
     }
 
     /* ===================== FOOTER ===================== */
@@ -1024,9 +1039,9 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
         @isabellabianchinutri
       </a>
-      <a href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial" target="_blank" rel="noopener" class="btn btn-primary nav-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.058 2.284 7.051L.786 23.267l4.401-1.412A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.003-1.371l-.359-.213-3.716 1.193 1.182-3.63-.233-.374A9.793 9.793 0 012.182 12c0-5.421 4.397-9.818 9.818-9.818 5.421 0 9.818 4.397 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"/></svg>
-        Agendar Consulta
+      <a href="https://reset.isabellabianchi.com.br/" target="_blank" rel="noopener" class="btn btn-primary nav-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Conheça o Protocolo Reset
       </a>
     </div>
   </div>
