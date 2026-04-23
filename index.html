@@ -52,6 +52,8 @@
       color: var(--charcoal);
       line-height: 1.6;
       overflow-x: hidden;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
     img { display: block; max-width: 100%; height: auto; }
     a { text-decoration: none; color: inherit; }
@@ -761,6 +763,7 @@
       padding: 100px 0;
       background: var(--cream);
       position: relative;
+      overflow-x: hidden;
     }
     .reset-inner {
       background: linear-gradient(135deg, var(--coral) 0%, #C4614A 100%);
@@ -773,6 +776,9 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 24px 80px rgba(224,122,95,.4);
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
     .reset-inner::before {
       content: '';
@@ -792,7 +798,7 @@
       border-radius: 50%;
       pointer-events: none;
     }
-    .reset-content { position: relative; z-index: 1; }
+    .reset-content { position: relative; z-index: 1; min-width: 0; }
     .reset-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -1067,9 +1073,9 @@
         Ajudo homens e mulheres a emagrecer com ciência, humanidade e um método que respeita quem você é — sem dietas restritivas, sem culpa.
       </p>
       <div class="hero-actions animate-up delay-4">
-        <a href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial" target="_blank" rel="noopener" class="btn btn-primary">
+        <a href="https://wa.me/5521988784380?text=Ol%C3%A1%20Isabella%2C%20quero%20saber%20mais%20sobre%20o%20atendimento" target="_blank" rel="noopener" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.058 2.284 7.051L.786 23.267l4.401-1.412A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.003-1.371l-.359-.213-3.716 1.193 1.182-3.63-.233-.374A9.793 9.793 0 012.182 12c0-5.421 4.397-9.818 9.818-9.818 5.421 0 9.818 4.397 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"/></svg>
-          Agendar Consulta
+          Fale Comigo Agora
         </a>
         <a href="https://reset.isabellabianchi.com.br/" target="_blank" rel="noopener" class="btn btn-outline">
           Protocolo Reset 45 Dias →
@@ -1283,9 +1289,9 @@
       </div>
       <h2>Atendimento presencial<br>na Barra da Tijuca</h2>
       <p>Consultas individualizadas, com tempo de qualidade e atenção total para você. Agende agora e dê o primeiro passo.</p>
-      <a href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial" target="_blank" rel="noopener" class="btn btn-coral">
+      <a href="https://wa.me/5521988784380?text=Ol%C3%A1%20Isabella%2C%20quero%20saber%20mais%20sobre%20o%20atendimento" target="_blank" rel="noopener" class="btn btn-coral">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.058 2.284 7.051L.786 23.267l4.401-1.412A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.003-1.371l-.359-.213-3.716 1.193 1.182-3.63-.233-.374A9.793 9.793 0 012.182 12c0-5.421 4.397-9.818 9.818-9.818 5.421 0 9.818 4.397 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"/></svg>
-        Clique e agende agora
+        Fale Comigo Agora
       </a>
     </div>
   </div>
@@ -1384,7 +1390,7 @@
 <!-- ===================== WHATSAPP FLOAT ===================== -->
 <div class="wpp-float">
   <span class="wpp-tooltip">Falar no WhatsApp</span>
-  <a href="https://wa.me/5521988784380?text=Quero%20agendar%20consulta%20presencial" target="_blank" rel="noopener" class="wpp-btn" aria-label="Falar no WhatsApp">
+  <a href="https://wa.me/5521988784380?text=Ol%C3%A1%20Isabella%2C%20quero%20saber%20mais%20sobre%20o%20atendimento" target="_blank" rel="noopener" class="wpp-btn" aria-label="Falar no WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.058 2.284 7.051L.786 23.267l4.401-1.412A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.003-1.371l-.359-.213-3.716 1.193 1.182-3.63-.233-.374A9.793 9.793 0 012.182 12c0-5.421 4.397-9.818 9.818-9.818 5.421 0 9.818 4.397 9.818 9.818 0 5.421-4.397 9.818-9.818 9.818z"/></svg>
   </a>
 </div>
